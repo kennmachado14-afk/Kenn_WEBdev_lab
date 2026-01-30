@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+/* Pricing Container with Flexbox */
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Pricing Card Base Styles */
+.pricing-card {
+    flex: 0 0 200px;
+    border: 2px solid black;
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Order properties for layout positioning */
+.basic-plan {
+    order: 1;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.pro-plan {
+    order: 2;
+    flex-grow: 2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid #764ba2;
+    transform: scale(1.05);
+}
+
+.pro-plan:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.premium-plan {
+    order: 3;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: 2px solid #f5576c;
+}
+
+/* Plan titles */
+.pricing-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.basic-plan h2 {
+    color: #2c3e50;
+}
+
+/* Price styling */
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.basic-plan .price {
+    color: #667eea;
+}
+
+.pro-plan .price {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.premium-plan .price {
+    color: #fff;
+}
+
+/* Features list */
+.features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.features li {
+    padding: 12px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.basic-plan .features li {
+    color: #34495e;
+}
+
+/* Select button */
+.select-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.basic-plan .select-btn {
+    background: #667eea;
+    color: white;
+}
+
+.basic-plan .select-btn:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+}
+
+.pro-plan .select-btn {
+    background: white;
+    color: #667eea;
+}
+
+.pro-plan .select-btn:hover {
+    background: #f5f7fa;
+    transform: scale(1.05);
+}
+
+.premium-plan .select-btn {
+    background: white;
+    color: #f5576c;
+}
+
+.premium-plan .select-btn:hover {
+    background: #f5f7fa;
+    transform: scale(1.05);
+}
+
+/* Popular badge for Pro plan */
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #2c3e50;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Info section */
+.info-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.info-section p {
+    color: white;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .pro-plan {
+        transform: scale(1);
+    }
+
+    .pro-plan:hover {
+        transform: translateY(-10px);
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .pro-plan .price {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .pricing-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .features li {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    .select-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .info-section p {
+        font-size: 1rem;
+    }
+}

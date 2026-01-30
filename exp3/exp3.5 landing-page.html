@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewCraft - Premium Coffee Delivered</title>
+    <link rel="stylesheet" href="landing-styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <img id="header-img" src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=150&h=150&fit=crop" alt="BrewCraft Logo">
+            <nav id="nav-bar">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#subscribe" class="nav-link">Subscribe</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Discover Artisan Coffee</h1>
+            <p class="hero-subtitle">Handpicked beans from around the world, delivered fresh to your door</p>
+            <a href="#subscribe" class="cta-button">Start Your Journey</a>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Why Choose BrewCraft</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3>Premium Selection</h3>
+                    <p>Carefully curated beans from the world's finest coffee regions, roasted to perfection by master artisans.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fresh Delivery</h3>
+                    <p>Roasted to order and shipped within 24 hours, ensuring maximum freshness with every batch.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Sustainable Sourcing</h3>
+                    <p>Direct trade relationships with farmers, ensuring fair prices and environmentally friendly practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Flexible Plans</h3>
+                    <p>Customize your subscription frequency, quantity, and roast preferences. Cancel or pause anytime.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works-section">
+            <h2>How It Works</h2>
+            <div class="video-container">
+                <iframe 
+                    id="video"
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/1Vy-PHno2Ig" 
+                    title="Coffee Making Process"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Plan</h3>
+                    <p>Select from our curated coffee collections or build your own custom selection.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Roast Fresh</h3>
+                    <p>Your coffee is roasted to order by our expert roasters, ensuring peak flavor.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Delivered to You</h3>
+                    <p>Receive your fresh coffee on your schedule, packaged sustainably.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">
+                        <span class="currency">$</span>
+                        <span class="amount">19</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>✓ 250g of premium coffee</li>
+                        <li>✓ One origin per month</li>
+                        <li>✓ Free shipping</li>
+                        <li>✓ Brewing guide included</li>
+                    </ul>
+                    <button class="select-plan">Select Plan</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Enthusiast</h3>
+                    <div class="price">
+                        <span class="currency">$</span>
+                        <span class="amount">35</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>✓ 500g of premium coffee</li>
+                        <li>✓ Two origins per month</li>
+                        <li>✓ Free priority shipping</li>
+                        <li>✓ Tasting notes & brewing tips</li>
+                        <li>✓ 10% off equipment</li>
+                    </ul>
+                    <button class="select-plan">Select Plan</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Connoisseur</h3>
+                    <div class="price">
+                        <span class="currency">$</span>
+                        <span class="amount">55</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>✓ 1kg of premium coffee</li>
+                        <li>✓ Three origins per month</li>
+                        <li>✓ Free express shipping</li>
+                        <li>✓ Exclusive micro-lots</li>
+                        <li>✓ 15% off equipment</li>
+                        <li>✓ Virtual tasting sessions</li>
+                    </ul>
+                    <button class="select-plan">Select Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section id="subscribe" class="subscribe-section">
+            <div class="subscribe-container">
+                <h2>Get Started Today</h2>
+                <p>Join thousands of coffee lovers and elevate your morning routine</p>
+                <form id="form" action="https://www.freecodecamp.org/email-submit" method="POST">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        required
+                    >
+                    <input type="submit" id="submit" value="Subscribe Now">
+                </form>
+                <p class="form-note">Start your subscription today and get 20% off your first order</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About BrewCraft</h4>
+                <p>We're passionate about bringing exceptional coffee experiences to your home.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@brewcraft.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BrewCraft. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
