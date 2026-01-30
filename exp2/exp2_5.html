@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2038a5 0%, #2c7eca 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .feature-card-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 200px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-card input[type="checkbox"] {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #4a5568;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .feature-card input[type="checkbox"]:checked {
+            background: #48bb78;
+            border-color: #38a169;
+        }
+
+        .feature-card input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .feature-card label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            text-align: center;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feature Selection</h1>
+    
+    <div class="feature-card-container">
+        <label class="feature-card">
+            <input type="checkbox">
+            <span>Premium Support</span>
+        </label>
+        
+        <label class="feature-card">
+            <input type="checkbox">
+            <span>Cloud Storage</span>
+        </label>
+        
+        <label class="feature-card">
+            <input type="checkbox">
+            <span>Analytics Dashboard</span>
+        </label>
+    </div>
+</body>
+</html>

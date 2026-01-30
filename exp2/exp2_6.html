@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidential Email</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #email {
+      padding: 50px;
+      margin-top: 50px;
+      width: 500px;
+      border: 2px solid #e74c3c;
+      box-sizing: border-box;
+      background: #f8f9fa;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    #email::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        #e74c3c 0px,
+        #e74c3c 20px,
+        transparent 20px,
+        transparent 40px
+      );
+    }
+
+    #confidential,
+    #top-secret {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-left: 10px;
+      border: 2px solid #e74c3c;
+      background: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #e74c3c;
+      box-shadow: 2px 2px 8px rgba(231, 76, 60, 0.3);
+    }
+
+    #confidential {
+      transform: rotate(-5deg);
+    }
+
+    #top-secret {
+      transform: rotate(3deg);
+      background: #e74c3c;
+      color: #fff;
+    }
+
+    .header-stamps {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .email-meta {
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .email-meta div {
+      margin-bottom: 8px;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    .email-meta strong {
+      color: #2d3748;
+      display: inline-block;
+      width: 80px;
+    }
+
+    h2 {
+      color: #2d3748;
+      margin-bottom: 20px;
+      font-size: 18px;
+      border-left: 4px solid #e74c3c;
+      padding-left: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: #495057;
+      text-align: justify;
+    }
+
+    .blurred {
+      filter: blur(3px);
+      background: #343a40;
+      color: #343a40;
+      padding: 2px 4px;
+      user-select: none;
+      cursor: help;
+    }
+
+    .signature {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #dee2e6;
+    }
+
+    .signature p {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .warning-footer {
+      margin-top: 30px;
+      padding: 16px;
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      font-size: 12px;
+      color: #856404;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      #email {
+        width: 100%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main id="email">
+    <div class="header-stamps">
+      <div id="confidential">CONFIDENTIAL</div>
+      <div id="top-secret">TOP SECRET</div>
+    </div>
+
+    <div class="email-meta">
+      <div><strong>From:</strong> Agent M. Shadow</div>
+      <div><strong>To:</strong> Director Operations</div>
+      <div><strong>Date:</strong> January 23, 2026</div>
+      <div><strong>Subject:</strong> Project Nightfall - Mission Brief</div>
+    </div>
+
+    <h2>Mission Overview</h2>
+
+    <p>
+      This communication contains classified information regarding Operation Nightfall. 
+      The asset known as <span class="blurred">Agent Phoenix</span> has successfully 
+      infiltrated the target organization and retrieved critical intelligence regarding 
+      their operational framework.
+    </p>
+
+    <p>
+      Intelligence reports indicate that the primary objective is located at coordinates 
+      <span class="blurred">47.6062° N, 122.3321° W</span> and is scheduled for 
+      activation on <span class="blurred">February 15, 2026</span>. All field operatives 
+      have been briefed on the extraction protocol and are standing by for further orders.
+    </p>
+
+    <p>
+      The security clearance level required for this mission is 
+      <span class="blurred">Level 9 Omega</span>, and only personnel with direct 
+      authorization from <span class="blurred">Command Central</span> are permitted 
+      access to the full documentation. Any breach of this protocol will result in 
+      immediate disciplinary action.
+    </p>
+
+    <p>
+      Our technical team has confirmed that the encryption keys for the 
+      <span class="blurred">Quantum Cipher System</span> remain secure and have not 
+      been compromised. However, we recommend enhanced monitoring of all communication 
+      channels for the next 72 hours as a precautionary measure.
+    </p>
+
+    <p>
+      Please acknowledge receipt of this message using the secure channel and confirm 
+      your availability for the debriefing session scheduled for 
+      <span class="blurred">0800 hours tomorrow</span>. Time is of the essence, and 
+      we cannot afford any delays in the execution of this operation.
+    </p>
+
+    <div class="signature">
+      <p><strong>Agent M. Shadow</strong></p>
+      <p>Special Operations Division</p>
+      <p>Clearance Level: Omega-9</p>
+    </div>
+
+    <div class="warning-footer">
+      ⚠️ <strong>SECURITY NOTICE:</strong> This document contains classified information. 
+      Unauthorized disclosure, reproduction, or distribution of this material is strictly 
+      prohibited and may result in severe penalties under federal law. Handle with extreme care.
+    </div>
+  </main>
+
+</body>
+</html>

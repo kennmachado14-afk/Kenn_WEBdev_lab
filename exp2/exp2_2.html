@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Task Manager</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #2d3748;
+      margin-bottom: 10px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      color: #718096;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .todo-list {
+      list-style: none;
+    }
+
+    .todo-list > li {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .todo-list > li:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .task-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #667eea;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #2d3748;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: #a0aec0;
+    }
+
+    .sub-item {
+      list-style: none;
+      padding-left: 32px;
+    }
+
+    .sub-item li {
+      margin-top: 8px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .sub-item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .sub-item-link::before {
+      content: "🔗";
+      font-size: 12px;
+    }
+
+    /* Link states */
+    .sub-item-link:link {
+      color: #667eea;
+    }
+
+    .sub-item-link:visited {
+      color: #805ad5;
+    }
+
+    .sub-item-link:hover {
+      color: #5a67d8;
+      background: #edf2f7;
+      border-color: #667eea;
+      transform: translateX(4px);
+    }
+
+    .sub-item-link:focus {
+      outline: 2px solid #667eea;
+      outline-offset: 2px;
+    }
+
+    .sub-item-link:active {
+      color: #4c51bf;
+      transform: scale(0.98);
+    }
+
+    .progress-bar {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .progress-label {
+      font-size: 14px;
+      color: #718096;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+    <p class="subtitle">Track your daily tasks and resources</p>
+
+    <ul class="todo-list">
+      <li>
+        <div class="task-header">
+          <input type="checkbox" id="todo1" onchange="updateProgress()">
+          <label for="todo1">Review Project Documentation</label>
+        </div>
+        <ul class="sub-item">
+          <li>
+            <a
+              class="sub-item-link"
+              href="https://www.freecodecamp.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resource Link
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="task-header">
+          <input type="checkbox" id="todo2" onchange="updateProgress()">
+          <label for="todo2">Complete Code Review</label>
+        </div>
+        <ul class="sub-item">
+          <li>
+            <a
+              class="sub-item-link"
+              href="https://www.freecodecamp.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Guidelines
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="task-header">
+          <input type="checkbox" id="todo3" onchange="updateProgress()">
+          <label for="todo3">Update Team Dashboard</label>
+        </div>
+        <ul class="sub-item">
+          <li>
+            <a
+              class="sub-item-link"
+              href="https://www.freecodecamp.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Dashboard Access
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="task-header">
+          <input type="checkbox" id="todo4" onchange="updateProgress()">
+          <label for="todo4">Prepare Weekly Report</label>
+        </div>
+        <ul class="sub-item">
+          <li>
+            <a
+              class="sub-item-link"
+              href="https://www.freecodecamp.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Template
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="progress-bar">
+      <div class="progress-label">Progress: <span id="progress-text">0/4 tasks completed</span></div>
+      <div class="progress">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+      const total = checkboxes.length;
+      const percentage = (checked / total) * 100;
+      
+      document.getElementById('progress-fill').style.width = percentage + '%';
+      document.getElementById('progress-text').textContent = `${checked}/${total} tasks completed`;
+    }
+  </script>
+</body>
+</html>

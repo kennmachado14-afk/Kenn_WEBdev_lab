@@ -1,0 +1,333 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Requirement 1: Body background color */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header styling */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px 0;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.header p {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Requirement 2: Color grid container */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+/* Requirements 4 & 5: Color box base styling with set width and height */
+.color-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-box:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.color-box:active {
+    transform: translateY(-10px) scale(1.01);
+    transition: all 0.1s ease;
+}
+
+/* Color information overlay */
+.color-info {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.color-box:hover .color-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.color-info h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.color-info p {
+    color: #34495e;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.color-type {
+    display: inline-block;
+    background: #34495e;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Requirement 6: Color1 - Hexadecimal background color */
+.color1 {
+    background-color: #3498db;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.color1 .color-type {
+    background: #2980b9;
+}
+
+/* Requirement 7: Color2 - RGB background color */
+.color2 {
+    background-color: rgb(231, 76, 60);
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.color2 .color-type {
+    background: #c0392b;
+}
+
+/* Requirement 8: Color3 - Predefined (word) background color */
+.color3 {
+    background-color: forestgreen;
+    background-image: 
+        radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.color3 .color-type {
+    background: #1f5f1f;
+}
+
+/* Requirement 9: Color4 - HSL background color */
+.color4 {
+    background-color: hsl(291, 64%, 42%);
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.color4 .color-type {
+    background: #6a1b9a;
+}
+
+/* Requirement 10: Color5 - Any background color format */
+.color5 {
+    background-color: rgba(255, 193, 7, 0.9);
+    background-image: 
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+}
+
+.color5 .color-type {
+    background: #f57f17;
+}
+
+/* Color details section */
+.color-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-card h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.detail-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.detail-card li:last-child {
+    border-bottom: none;
+}
+
+.detail-card strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .color-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .color-box {
+        height: 250px;
+    }
+    
+    .color-info {
+        padding: 20px;
+    }
+    
+    .color-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .color-info p {
+        font-size: 1rem;
+    }
+    
+    .detail-card {
+        padding: 25px 20px;
+    }
+    
+    .detail-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .detail-card li {
+        font-size: 1rem;
+    }
+}
+
+/* Additional animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.color-box:nth-child(odd) {
+    animation: float 6s ease-in-out infinite;
+}
+
+.color-box:nth-child(even) {
+    animation: float 6s ease-in-out infinite 3s;
+}
+
+/* Accessibility improvements */
+.color-box:focus {
+    outline: 3px solid #f39c12;
+    outline-offset: 5px;
+}
+
+.color-box:focus .color-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.color-box {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.color-box:nth-child(1) { animation-delay: 0.1s; }
+.color-box:nth-child(2) { animation-delay: 0.2s; }
+.color-box:nth-child(3) { animation-delay: 0.3s; }
+.color-box:nth-child(4) { animation-delay: 0.4s; }
+.color-box:nth-child(5) { animation-delay: 0.5s; }
+
+/* Print styles */
+@media print {
+    .color-box {
+        height: 200px;
+        break-inside: avoid;
+    }
+    
+    .color-info {
+        transform: none;
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.8);
+    }
+    
+    .header p {
+        color: #000;
+    }
+}

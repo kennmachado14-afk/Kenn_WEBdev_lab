@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #683129 0%, #150d1d 100%);
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 60px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 0 200px;
+      border: 2px solid black;
+      padding: 30px 20px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .basic-plan {
+      order: 0;
+      border-color: #4CAF50;
+    }
+
+    .pro-plan {
+      order: 1;
+      flex-grow: 2;
+      border-color: #2196F3;
+      background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+    }
+
+    .premium-plan {
+      order: 2;
+      border-color: #FF9800;
+    }
+
+    .pricing-card h2 {
+      margin: 0 0 15px 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .basic-plan h2 { color: #4CAF50; }
+    .pro-plan h2 { color: #2196F3; }
+    .premium-plan h2 { color: #FF9800; }
+
+    .pricing-card p {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pricing Plans</h1>
+  
+  <div class="pricing-container">
+    <!-- HTML order: Premium first, Basic second, Pro third -->
+    <div class="pricing-card premium-plan">
+      <h2>Premium</h2>
+      <p>$29/month</p>
+    </div>
+    
+    <div class="pricing-card basic-plan">
+      <h2>Basic</h2>
+      <p>$9/month</p>
+    </p>
+    </div>
+    
+    <div class="pricing-card pro-plan">
+      <h2>Pro</h2>
+      <p>$19/month</p>
+    </div>
+  </div>
+</body>
+</html>

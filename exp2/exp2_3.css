@@ -1,0 +1,41 @@
+/* focus state (use list selector, correct order) */
+input:focus,
+textarea:focus {
+  border-color: blue;
+}
+
+/* invalid state (list selector, correct order) */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: red;
+}
+
+/* valid state (list selector, correct order) */
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: green;
+}
+
+/* button hover */
+button:hover {
+  background-color: lightblue;
+}
+
+/* radio checked styles */
+.radio-group input[type="radio"]:checked {
+  border-color: blue;
+  background-color: lightblue;
+  box-shadow: 0 0 5px blue;
+}
+
+/* change label text color when radio is checked */
+.radio-group input[type="radio"]:checked + label {
+  color: blue;
+}
+
+/* first input styling */
+input:first-of-type {
+  border-radius: 8px;
+}
